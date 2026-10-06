@@ -23,6 +23,7 @@
 ## 目录结构
 
 ```
+code/            每日练习代码（Day11+ 的 dict/set/tuple/推导式 等）
 projects/        实战项目（M2 后逐步填充）
 notes/           学习笔记
 Python技能树_每日任务清单.md
