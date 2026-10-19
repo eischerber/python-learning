@@ -9,11 +9,14 @@ scores = [72, 45, 88, 91, 60, 53, 77, 96, 68, 84]
 
 # ========== 第 1 部分：循环版（Day 12 内容，先补回来）==========
 # TODO-1 平均分：用 sum() 和 len() 算，打印出来
-avg = None
+A = sum(scores)
+B = len(scores)
+avg = A / B
 print("平均分:", avg)
 
 # TODO-2 降序前三名：sorted(scores, reverse=True) 之后切片取前三个
-top3 = None
+desc = sorted(scores,reverse=True)
+top3 = desc[:3] 
 print("前三名:", top3)
 
 
@@ -33,13 +36,13 @@ print("两版结果一致:", passed_loop == passed_comp)   # 必须 True
 
 # TODO-3 用推导式把及格分数换算成"等级"：>=85 优秀 / >=60 及格
 # 提示：结果表达式里可以放三元运算  "优秀" if s >= 85 else "及格"
-levels = None
+levels = ["优秀" if s >= 85 else "及格"  for s in scores ]
 print("等级:", levels)
 
 
 # TODO-4 用推导式算出全班分数与平均分的差值（保留一位小数）
 # 提示：round(s - avg, 1)
-diffs = None
+diffs = [round(s -avg, 1)for s in scores]
 print("与平均分的差:", diffs)
 
 
