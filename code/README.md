@@ -24,7 +24,7 @@
 
 | 编号 | 文件 | 状态 |
 |---|---|---|
-| W1D1 | `code/w1d1_grades.py` | 待完成（骨架已建，4 个 TODO） |
+| W1D1 | `code/w1d1_grades.py` | ✅ 完成（10/19，commit `181b6cf`，自检三行全对） |
 | W1D2 | `w1d2_list.py` | 待写 |
 | W1D3 | `w1d3_nested.py` | 待写 |
 | W1D4 | `w1d4_textstat.py` | 待写 |
