@@ -6,8 +6,12 @@ venv/
 env/
 
 # IDE
+.vs/
 .vscode/
 .idea/
+*.pyproj
+*.slnx
+*.sln
 
 # 系统
 Thumbs.db
