@@ -10,21 +10,29 @@ scores = [90, 55, 78, 88, 62, 95, 71, 83, 59, 100, 66]
 # ---- 1. 最大值 ----
 # 思路：内置 max()，或者 for 循环逐个比大小（初始化 m = scores[0]）
 # TODO：求出最大值，打印出来
-
+max_scores = max(scores)
+print(max_scores)
 
 # ---- 2. 最小值 ----
 # TODO
+min_scores = min(scores)
+print(min_scores)
 
 
 # ---- 3. 平均分 ----
 # 思路：sum(scores) / len(scores)
 # TODO
+avg = (sum(scores)/len(scores))
+print(avg)
 
 
 # ---- 4. 降序前三名 ----
 # 思路：先 sorted(scores, reverse=True) 得到新列表，再切片 [:3]
 # 注意：sorted() 不改原列表，必须把返回值接住
 # TODO
+desc = sorted(scores,reverse=True)
+top3 = desc[:3]
+print(top3)
 
 
 # ---- 自检（写完跑一遍，四行全对才算过）----
