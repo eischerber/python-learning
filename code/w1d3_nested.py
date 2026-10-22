@@ -19,17 +19,33 @@ students = [
 #   4. 循环结束后，best 就是最高分学生，打印 best["name"] 和 best["score"]
 # 注意：字典取值是 ["键"]，取名字是 s["name"]，取分数是 s["score"]
 # TODO：写出上面四步
+best = students[0]
+for s in students:
+    if s["score"] > best["score"]:
+       best = s
+print(best["name"])
+print(best["score"])          
+
 
 
 # ---- 选做 1：全班平均分 ----
 # 循环累加再除，不许用 sum(...) 一把梭（要的就是循环）
 # TODO
+total = 0
+for m in students:
+    total = total + m["score"]
+avg = (total/len(students))
+print(avg)    
 
 
 # ---- 选做 2：给每个人打等级 ----
 # >=85 优秀，其他及格。两层循环嵌套：外层 for s in students，内层就是三元判断
 # 提示：print(s["name"], "优秀" if s["score"] >= 85 else "及格")
 # TODO
+for s in students:
+    print(s["name"],"优秀" if s["score"] >= 85 else "及格")
+    
+
 
 
 # ---- 自检 ----
