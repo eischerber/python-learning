@@ -13,6 +13,8 @@ text = "Python is fun. I learn Python every day. Coding makes me happy. Do you l
 #   2. 去掉标点：至少处理 "." 和 "?"（replace 可以串着写）
 #   3. 切成词：split()
 # TODO：写出预处理三行，得到 words 列表
+clean = text.lower().replace(".", "").replace("?", "")
+words = clean.split()
 
 
 # ---- 主任务：词频字典（手写循环版）----
@@ -22,6 +24,12 @@ text = "Python is fun. I learn Python every day. Coding makes me happy. Do you l
 #       if word in counts:  counts[word] += 1     # 见过 → 加 1
 #       else:              counts[word] = 1       # 没见过 → 记 1
 # TODO
+counts = {}
+for word in words:
+    if (word) in counts:
+        counts[word] += 1
+    else:
+        counts[word] = 1
 
 
 # ---- 主任务：Top3（循环版，不许用 lambda 排序）----
@@ -34,18 +42,51 @@ text = "Python is fun. I learn Python every day. Coding makes me happy. Do you l
 #   top3.append(best_word)
 # 提示：字典同时取键和值的写法是 for w, c in counts.items():
 # TODO：循环三次，得到 top3 列表并打印
+top3 = []
+for i in range(3):
+ best_word = None
+ best_count = -1
+ for w, c in counts.items():
+    if w not in top3 and c > best_count:
+        best_word, best_count = w, c
+ top3.append(best_word)
+
+
+print("Top 3 words:", top3)
 
 
 # ---- 选做 1：最长词 ----
 # best 套路的老朋友：longest = words[0] 起手，for word in words: if len(word) > len(longest): longest = word
-# TODO
+# TODO 
+longest = words[0]
+for word in words:
+   if len(word) > len(longest):
+      longest = word
+print(longest)
+   
+
 
 
 # ---- 选做 2：平均句长 ----
 # 思路：按句子切开 → 数每句几个词 → 累加 ÷ 句数
 #   切句子：clean_text.replace("?", ".").split(".")，切完会有空字符串，要过滤掉
 #   注意：split(".") 切出来每句开头多个空格，strip() 一下，空串跳过
-# TODO
+# TODO 
+sentences = text.replace("?",".").split(".")
+total_words = 0
+sentence_count = 0
+for s in sentences:
+   s = s.strip()
+   if s == "":
+      continue
+   total_words += len(s.split())
+   sentence_count += 1
+
+juchang = total_words/sentence_count
+print(juchang)
+       
+
+
 
 
 # ---- 自检（三项都写才有资格进 D6 模拟测）----
