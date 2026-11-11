@@ -15,8 +15,9 @@ text = "Python is great. I use Python every day. Python helps me solve tasks and
 # 原理：空字典 counts = {} → for word in words → 在就 +1，不在就 =1。
 # TODO：预处理（lower → 去 . 和 ? → split）得到 words，再手写循环统计词频。
 clean_text = text.replace("?","").replace(".","")
-words =text.split()
 counts = {}
+words = clean_text.lower().split()
+
 for word in words:
     if word in counts:
        counts[word] +=1
@@ -24,6 +25,7 @@ for word in words:
         counts[word] = 1
 
     
+
 
 # ── 主任务2：Top3（best 擂台法，禁 sorted/lambda）──
 # 原理：for _ in range(3) 打三场；每场 best_count=-1 起手；
